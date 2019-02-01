@@ -1,0 +1,5 @@
+<div style='width:100%'>
+  <div *ngFor="let message of messages">
+    <app-message [sender]='message.sender' [content]='message.content' [sentTime]='message.sentTime' [isOwn]='message.isOwn' [isRead]='isRead'></app-message>
+  </div>
+</div>

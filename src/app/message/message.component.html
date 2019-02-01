@@ -1,0 +1,9 @@
+
+<div class="media border p-3 message">
+  <img src="{{imagePath}}" class="align-self-start mr-3" style="width:60px">
+  <div class="media-body">
+    <h6><a routerLink="/profile/{{sender.ID}}">{{sender.FirstName}} {{sender.LastName}}</a></h6>
+    <div>{{content}}</div>
+    <div class="pull-right"><small class="pull-right">{{sentTime.hours}}:{{sentTime.minutes}}</small></div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <!-- Brand -->
+ <a class="navbar-brand" href="#">Messenger</a>
+   <!-- Toggler/collapsibe Button -->
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse" id="collapsibleNavbar">
+   <ul class="navbar-nav">
+     <li>
+       <form class="form-inline" action="/action_page.php">
+         <div class="input-group">
+           <div class="input-group-prepend">
+             <span class="input-group-text">@</span>
+           </div>
+           <input type="text" class="form-control" placeholder="Username">
+         </div> 
+       </form>
+     </li>    
+   </ul>
+   <ul class="navbar-nav ml-auto">
+     <li class="nav-item">
+       <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" routerLink="/profile/999" routerLinkActive="active">Profile</a>
+     </li>
+     <li>
+         <a class="nav-link" routerLink="/login" (click)="logOut()" routerLinkActive="active">Sign Out</a>
+     </li>
+   </ul>
+ </div>
+</nav>

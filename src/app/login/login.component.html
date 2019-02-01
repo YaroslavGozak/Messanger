@@ -1,0 +1,49 @@
+<div style="margin-top:50%;">
+  <form [formGroup]="loginForm">
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <select class="form-control" id="country">
+        <option>Ukraine (+38)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="0957917993" 
+      formControlName='phone' required maxlength="14"
+      (keydown)="enforceFormat($event)" (keyup)="formatToPhone($event)">
+      <div *ngIf="phone.invalid && isSubmitted"
+        class="alert alert-danger">
+          <div *ngIf="phone.errors.required">
+              Phone number is required.
+          </div>
+          <div *ngIf="phone.errors.minlength">
+              Phone number must be 10 characters long.
+          </div>
+          <div *ngIf="phone.errors.maxlength">
+              Phone number must be 10 characters long.
+          </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-dark pull-right" (click)="onSendCode()">Send Code</button>
+    <div id="verification_area" class="collapse">
+      <div class="form-group">
+        <label for="confirmationCode">Code:</label>
+        <input type="text" class="form-control" id="confirmationCode" name="confirmationCode" placeholder="123456" 
+        formControlName="code" required maxlength="6">
+        <div *ngIf="code.invalid && (code.dirty || code.touched)"
+        class="alert alert-danger">
+          <div *ngIf="code.errors.required">
+              Code is required.
+          </div>
+          <div *ngIf="code.errors.minlength">
+              Code must be 6 characters long.
+          </div>
+          <div *ngIf="code.errors.maxlength">
+              Code must be 6 characters long.
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-dark" (click)="onVerifyCode()">Verify Code</button>
+    </div>
+  </form>
+</div>
