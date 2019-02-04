@@ -1,0 +1,32 @@
+.message-list-container{
+    width:100%;
+    height:60%; 
+    overflow-y: auto;
+    margin-top: 1rem;
+    border-top: 2px solid #f1f1f1;
+}
+/* width */
+.message-list-container::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  
+  /* Handle */
+  .message-list-container::-webkit-scrollbar-thumb {
+    background: #c6c6c6; 
+  }
+  
+  /* Handle on hover */
+  .message-list-container::-webkit-scrollbar-thumb:hover {
+    background: #a2a2a2; 
+  }
+
+  .text-area{
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
+  .my-message{
+    resize: none;
+  }

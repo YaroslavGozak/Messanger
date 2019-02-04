@@ -1,0 +1,11 @@
+
+  <div class="message-list-container">
+    <div *ngFor="let message of messages">
+      <app-message [sender]='message.sender' [content]='message.content' [sentTime]='message.sentTime' [isOwn]='message.isOwn' [isRead]='message.isRead'></app-message>
+    </div>
+  </div>
+  <form class="text-area form-inline d-flex justify-content-around">
+    <textarea class="my-message" rows="3" cols="50"></textarea>
+    <button type="button" class="btn btn-dark">Send</button>
+  </form>
+

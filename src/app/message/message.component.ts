@@ -20,6 +20,7 @@ export class MessageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

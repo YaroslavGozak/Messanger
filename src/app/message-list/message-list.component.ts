@@ -3,11 +3,11 @@ import { Message } from '../message';
 import { MessageService } from '../services/message.service';
 
 @Component({
-  selector: 'app-messages',
-  templateUrl: './messages.component.html',
-  styleUrls: ['./messages.component.css']
+  selector: 'app-message-list',
+  templateUrl: './message-list.component.html',
+  styleUrls: ['./message-list.component.css']
 })
-export class MessagesComponent implements OnInit {
+export class MessageListComponent implements OnInit {
 
   messages: Message[];
 

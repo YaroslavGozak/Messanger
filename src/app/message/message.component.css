@@ -1,17 +1,78 @@
-.read{
-    background-color:lightgray;
+.message-box-container.unread{
+	background-color: #e0ebff;
 }
 
-.message{
-    width:100%;
-    border:1px solid lightgray;
-    color:black;
-    border-radius:15px;
-    margin-bottom:7px;
-    padding:10px;
-    padding-bottom: 2px;
+.message-box{
+	position: relative;
+	background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 1.5rem 3rem;
 }
 
-.pull-right{
-    float: right;
+.message-box:hover{
+    background-color: #fafafa;
+}
+
+.message-box:after, .message-box:before {
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.message-box:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-width: 7px;
+	margin-top: -7px;
+}
+.message-box:before {
+	border-color: rgba(214, 66, 81, 0);
+	border-width: 9px;
+	margin-top: -9px;
+}
+
+.message-box:not(.reverse):after, .message-box:not(.reverse):before {
+	left: 100%;
+	top: 50%;
+}
+
+.message-box:not(.reverse):after {
+	border-left-color: #ffffff;
+}
+.message-box:not(.reverse):before {
+	border-left-color: #e6e6e6;
+}
+
+.message-box.reverse:after, .message-box.reverse:before {
+	right: 100%;
+	top: 50%;
+}
+
+.message-box.reverse:after {
+	border-right-color: #ffffff;
+}
+.message-box.reverse:before {
+	border-right-color: #e6e6e6;
+}
+
+.header-section, .content-section, .footer-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.header-section.reverse, .content-section.reverse, .footer-section.reverse{
+    flex-direction: row-reverse;
+}
+
+a{
+    color: gray;
+}
+
+a:hover{
+	text-decoration: none;
 }

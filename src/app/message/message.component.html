@@ -1,9 +1,14 @@
 
-<div class="media border p-3 message">
-  <img src="{{imagePath}}" class="align-self-start mr-3" style="width:60px">
-  <div class="media-body">
-    <h6><a routerLink="/profile/{{sender.ID}}">{{sender.FirstName}} {{sender.LastName}}</a></h6>
-    <div>{{content}}</div>
-    <div class="pull-right"><small class="pull-right">{{sentTime.hours}}:{{sentTime.minutes}}</small></div>
+<div [ngClass]="{'message-box-container': true, 'unread': !isRead}">
+  <div [ngClass]="{'message-box': true, 'reverse': !isOwn, 'unread': !isRead}">
+    <div [ngClass]="{'header-section': true, 'reverse': isOwn}">
+      <h6><a routerLink="/profile/{{sender.ID}}">{{sender.FirstName}} {{sender.LastName}}</a></h6>
+    </div>
+    <div [ngClass]="{'content-section': true, 'reverse': isOwn}">
+      <div>{{content}}</div>
+    </div>
+    <div class="footer-section reverse">
+      <small class="message-time"><a href="#">{{sentTime.hours}}:{{sentTime.minutes}}</a></small>
+    </div>
   </div>
 </div>
